@@ -1,0 +1,14 @@
+# Core Dependencies
+slack_bolt
+openai
+pinecone-client
+python-dotenv
+
+# Content Ingestion (example, choose specific ones later)
+# PyMuPDF # or pdfplumber
+# assemblyai # or other transcription service SDK
+
+# Development & Testing (optional, can be in a dev-requirements.txt)
+# pytest
+# flask # if a simple admin UI or callbacks are needed
+# fastapi # alternative to flask
