@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Renesis Team">
+        <link rel="canonical" href="https://noumanjavaid96.github.io/gutless-ai-assistant/README_DOCS/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Renesis AI Assistant Documentation - Renesis AI Assistant Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/extra.css" rel="stylesheet">
+        <link href="../stylesheets/modern-components.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Renesis AI Assistant Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting Started</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../configuration/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../usage/" class="dropdown-item">Usage</a>
+</li>
+                                    
+<li>
+    <a href="../deployment/" class="dropdown-item">Deployment</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Documentation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../api-reference/" class="dropdown-item">API Reference</a>
+</li>
+                                    
+<li>
+    <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Contributing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../contributing/" class="dropdown-item">Contributing Guide</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/noumanjavaid96/gutless-ai-assistant/edit/main/docs/README_DOCS.md" class="nav-link">Edit on gutless-ai-assistant
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#renesis-ai-assistant-documentation" class="nav-link">Renesis AI Assistant Documentation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#documentation-structure" class="nav-link">📚 Documentation Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-start" class="nav-link">🚀 Quick Start</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#local-development" class="nav-link">Local Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#building-for-production" class="nav-link">Building for Production</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#development-workflow" class="nav-link">🛠️ Development Workflow</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#making-changes" class="nav-link">Making Changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#adding-new-pages" class="nav-link">Adding New Pages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#styling-and-customization" class="nav-link">Styling and Customization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#writing-guidelines" class="nav-link">📝 Writing Guidelines</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#markdown-best-practices" class="nav-link">Markdown Best Practices</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#content-structure" class="nav-link">Content Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#code-documentation" class="nav-link">Code Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#api-documentation" class="nav-link">API Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#styling-features" class="nav-link">🎨 Styling Features</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#available-components" class="nav-link">Available Components</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#status-badges" class="nav-link">Status Badges</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#feature-cards" class="nav-link">Feature Cards</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#button-links" class="nav-link">Button Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#api-method-documentation" class="nav-link">API Method Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mathematical-expressions" class="nav-link">Mathematical Expressions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#dark-mode-support" class="nav-link">Dark Mode Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuration" class="nav-link">🔧 Configuration</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#site-configuration" class="nav-link">Site Configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#plugin-configuration" class="nav-link">Plugin Configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#extension-configuration" class="nav-link">Extension Configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#deployment" class="nav-link">🚀 Deployment</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#github-pages-automatic" class="nav-link">GitHub Pages (Automatic)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#manual-deployment" class="nav-link">Manual Deployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#docker-deployment" class="nav-link">Docker Deployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#testing" class="nav-link">🧪 Testing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#local-testing" class="nav-link">Local Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#automated-testing" class="nav-link">Automated Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#analytics-and-monitoring" class="nav-link">📊 Analytics and Monitoring</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#google-analytics" class="nav-link">Google Analytics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#performance-monitoring" class="nav-link">Performance Monitoring</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#search-configuration" class="nav-link">🔍 Search Configuration</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#search-features" class="nav-link">Search Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#search-optimization" class="nav-link">Search Optimization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#internationalization" class="nav-link">🌐 Internationalization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#adding-languages" class="nav-link">Adding Languages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">🔧 Troubleshooting</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#common-issues" class="nav-link">Common Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#build-errors" class="nav-link">Build Errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#serve-issues" class="nav-link">Serve Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#plugin-errors" class="nav-link">Plugin Errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#getting-help" class="nav-link">Getting Help</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#best-practices" class="nav-link">📈 Best Practices</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#performance" class="nav-link">Performance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#accessibility" class="nav-link">Accessibility</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#seo" class="nav-link">SEO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#maintenance" class="nav-link">Maintenance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contributing" class="nav-link">🤝 Contributing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#quick-contribution-steps" class="nav-link">Quick Contribution Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#support" class="nav-link">📞 Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="renesis-ai-assistant-documentation">Renesis AI Assistant Documentation<a class="headerlink" href="#renesis-ai-assistant-documentation" title="Permanent link">&para;</a></h1>
+<p>This directory contains the complete documentation for the Renesis AI Assistant project. The documentation is built using modern web technologies with a sleek, responsive design.</p>
+<h2 id="documentation-structure">📚 Documentation Structure<a class="headerlink" href="#documentation-structure" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docs/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── index.md                 # Main documentation homepage
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── installation.md          # Installation and setup guide
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── configuration.md         # Configuration reference
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── usage.md                 # User guide and how-to
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── architecture.md          # System architecture overview
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── api-reference.md         # API documentation
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── troubleshooting.md       # Common issues and solutions
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── faq.md                   # Frequently asked questions
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── contributing.md          # Contributing guidelines
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── requirements.txt         # Documentation dependencies
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── stylesheets/
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   └── extra.css           # Custom CSS styles
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── javascripts/
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   └── mathjax.js          # MathJax configuration
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>└── README.md               # This file
+</span></code></pre></div>
+<h2 id="quick-start">🚀 Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.8 or higher</li>
+<li>pip package manager</li>
+</ul>
+<h3 id="local-development">Local Development<a class="headerlink" href="#local-development" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Install documentation dependencies</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Start the development server</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Open your browser</strong> and navigate to <code>http://localhost:8000</code></p>
+</li>
+<li>
+<p><strong>Edit documentation</strong> - changes will be automatically reloaded</p>
+</li>
+</ol>
+<h3 id="building-for-production">Building for Production<a class="headerlink" href="#building-for-production" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Build the static site</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>The built site</strong> will be in the <code>site/</code> directory</p>
+</li>
+<li>
+<p><strong>Deploy</strong> the contents of <code>site/</code> to your web server</p>
+</li>
+</ol>
+<h2 id="development-workflow">🛠️ Development Workflow<a class="headerlink" href="#development-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="making-changes">Making Changes<a class="headerlink" href="#making-changes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Edit Markdown files</strong> in the <code>docs/</code> directory</li>
+<li><strong>Preview changes</strong> using the local development server</li>
+<li><strong>Test the build</strong> using the build command</li>
+<li><strong>Commit your changes</strong> following our <a href="../contributing/">contributing guidelines</a></li>
+</ol>
+<h3 id="adding-new-pages">Adding New Pages<a class="headerlink" href="#adding-new-pages" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Create a new Markdown file</strong> in the <code>docs/</code> directory</li>
+<li><strong>Add the page to navigation</strong> in the site configuration:
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Your New Page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-new-page.md</span>
+</span></code></pre></div></li>
+<li><strong>Link to the page</strong> from other relevant documentation</li>
+</ol>
+<h3 id="styling-and-customization">Styling and Customization<a class="headerlink" href="#styling-and-customization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Custom CSS</strong>: Edit <code>docs/stylesheets/extra.css</code></li>
+<li><strong>Custom JavaScript</strong>: Edit <code>docs/javascripts/mathjax.js</code> or add new files</li>
+<li><strong>Theme configuration</strong>: Modify the site configuration</li>
+</ul>
+<h2 id="writing-guidelines">📝 Writing Guidelines<a class="headerlink" href="#writing-guidelines" title="Permanent link">&para;</a></h2>
+<h3 id="markdown-best-practices">Markdown Best Practices<a class="headerlink" href="#markdown-best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <strong>clear, descriptive headings</strong></li>
+<li>Include a <strong>table of contents</strong> for long pages</li>
+<li>Use <strong>code blocks</strong> with language specification:
+  <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">example_function</span><span class="p">():</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">return</span> <span class="s2">&quot;Hello, World!&quot;</span>
+</span></code></pre></div></li>
+<li>Add <strong>admonitions</strong> for important information:
+  <div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>!!! note &quot;Important&quot;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    This is an important note.
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>!!! warning &quot;Caution&quot;
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    This requires careful attention.
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>!!! tip &quot;Pro Tip&quot;
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    This is a helpful tip.
+</span></code></pre></div></li>
+</ul>
+<h3 id="content-structure">Content Structure<a class="headerlink" href="#content-structure" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Start with an overview</strong> of what the page covers</li>
+<li><strong>Use numbered lists</strong> for step-by-step instructions</li>
+<li><strong>Include examples</strong> for code and configuration</li>
+<li><strong>Add cross-references</strong> to related documentation</li>
+<li><strong>End with next steps</strong> or related resources</li>
+</ol>
+<h3 id="code-documentation">Code Documentation<a class="headerlink" href="#code-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Include complete examples</strong> that users can copy and run</li>
+<li><strong>Explain parameters</strong> and return values</li>
+<li><strong>Show error handling</strong> where appropriate</li>
+<li><strong>Use consistent formatting</strong> for code blocks</li>
+</ul>
+<h3 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Document all public methods</strong> and classes</li>
+<li><strong>Include parameter types</strong> and descriptions</li>
+<li><strong>Show example requests and responses</strong></li>
+<li><strong>Document error codes</strong> and messages</li>
+</ul>
+<h2 id="styling-features">🎨 Styling Features<a class="headerlink" href="#styling-features" title="Permanent link">&para;</a></h2>
+<h3 id="available-components">Available Components<a class="headerlink" href="#available-components" title="Permanent link">&para;</a></h3>
+<h4 id="status-badges">Status Badges<a class="headerlink" href="#status-badges" title="Permanent link">&para;</a></h4>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;status-badge success&quot;</span><span class="p">&gt;</span>Success<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;status-badge warning&quot;</span><span class="p">&gt;</span>Warning<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;status-badge error&quot;</span><span class="p">&gt;</span>Error<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;status-badge info&quot;</span><span class="p">&gt;</span>Info<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h4 id="feature-cards">Feature Cards<a class="headerlink" href="#feature-cards" title="Permanent link">&para;</a></h4>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;feature-grid&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;feature-card&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;icon&quot;</span><span class="p">&gt;</span>🚀<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Feature Title<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Feature description goes here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h4 id="button-links">Button Links<a class="headerlink" href="#button-links" title="Permanent link">&para;</a></h4>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/path/to/page&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Primary Button<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/path/to/page&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button secondary&quot;</span><span class="p">&gt;</span>Secondary Button<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h4 id="api-method-documentation">API Method Documentation<a class="headerlink" href="#api-method-documentation" title="Permanent link">&para;</a></h4>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;api-method&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;method-name&quot;</span><span class="p">&gt;</span>process_query<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;method-signature&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    process_query(query: str, user_id: str) -&gt; QueryResponse
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Method description goes here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="mathematical-expressions">Mathematical Expressions<a class="headerlink" href="#mathematical-expressions" title="Permanent link">&para;</a></h3>
+<p>MathJax is configured for mathematical notation:</p>
+<ul>
+<li><strong>Inline math</strong>: <code>\(E = mc^2\)</code></li>
+<li><strong>Block math</strong>: 
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>\[
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>\text{similarity} = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| \cdot ||\vec{b}||}
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>\]
+</span></code></pre></div></li>
+</ul>
+<h3 id="dark-mode-support">Dark Mode Support<a class="headerlink" href="#dark-mode-support" title="Permanent link">&para;</a></h3>
+<p>The documentation automatically supports dark mode with:
+- <strong>Automatic theme detection</strong>
+- <strong>Manual theme toggle</strong>
+- <strong>Consistent styling</strong> across themes
+- <strong>Proper contrast ratios</strong> for accessibility</p>
+<h2 id="configuration">🔧 Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="site-configuration">Site Configuration<a class="headerlink" href="#site-configuration" title="Permanent link">&para;</a></h3>
+<p>The main configuration manages the site structure:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Renesis AI Assistant Documentation</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation</span>
+</span></code></pre></div>
+<h3 id="plugin-configuration">Plugin Configuration<a class="headerlink" href="#plugin-configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Search</strong>: Enhanced search with highlighting</li>
+<li><strong>Minify</strong>: Optimizes HTML, CSS, and JS</li>
+<li><strong>Git info</strong>: Shows last modified dates</li>
+<li><strong>Redirects</strong>: Handles URL redirects</li>
+</ul>
+<h3 id="extension-configuration">Extension Configuration<a class="headerlink" href="#extension-configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PyMdown Extensions</strong>: Enhanced Markdown features</li>
+<li><strong>Code highlighting</strong>: Syntax highlighting for code blocks</li>
+<li><strong>Admonitions</strong>: Callout boxes for notes and warnings</li>
+<li><strong>Tables</strong>: Enhanced table formatting</li>
+<li><strong>Task lists</strong>: Checkbox lists</li>
+<li><strong>Emoji</strong>: Emoji support</li>
+</ul>
+<h2 id="deployment">🚀 Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="github-pages-automatic">GitHub Pages (Automatic)<a class="headerlink" href="#github-pages-automatic" title="Permanent link">&para;</a></h3>
+<p>The documentation is automatically deployed to GitHub Pages when:
+- Changes are pushed to the <code>main</code> branch
+- Changes are made to documentation files
+- The GitHub Actions workflow completes successfully</p>
+<h3 id="manual-deployment">Manual Deployment<a class="headerlink" href="#manual-deployment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Build the documentation</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Deploy to GitHub Pages</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>npm<span class="w"> </span>run<span class="w"> </span>deploy
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Deploy to custom server</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Copy the site/ directory to your web server</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>rsync<span class="w"> </span>-av<span class="w"> </span>site/<span class="w"> </span>user@server:/path/to/webroot/
+</span></code></pre></div></p>
+</li>
+</ol>
+<h3 id="docker-deployment">Docker Deployment<a class="headerlink" href="#docker-deployment" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">COPY</span><span class="w"> </span>site/<span class="w"> </span>/usr/share/nginx/html/
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Build the documentation</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Build Docker image</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>gutless-docs<span class="w"> </span>.
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Run container</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>gutless-docs
+</span></code></pre></div>
+<h2 id="testing">🧪 Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<h3 id="local-testing">Local Testing<a class="headerlink" href="#local-testing" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Test build</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>npm<span class="w"> </span>run<span class="w"> </span>build<span class="w"> </span>--strict
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Test serve</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>npm<span class="w"> </span>run<span class="w"> </span>serve<span class="w"> </span>--strict
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># Check for broken links</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>pip<span class="w"> </span>install<span class="w"> </span>linkchecker
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>linkchecker<span class="w"> </span>http://localhost:8000/
+</span></code></pre></div>
+<h3 id="automated-testing">Automated Testing<a class="headerlink" href="#automated-testing" title="Permanent link">&para;</a></h3>
+<p>The GitHub Actions workflow includes:
+- <strong>Build testing</strong>: Ensures documentation builds without errors
+- <strong>Link checking</strong>: Validates internal and external links
+- <strong>Accessibility testing</strong>: Checks for accessibility issues
+- <strong>Performance testing</strong>: Runs Lighthouse audits
+- <strong>Spell checking</strong>: Validates spelling and grammar
+- <strong>Markdown linting</strong>: Ensures consistent formatting</p>
+<h2 id="analytics-and-monitoring">📊 Analytics and Monitoring<a class="headerlink" href="#analytics-and-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link">&para;</a></h3>
+<p>To enable Google Analytics:</p>
+<ol>
+<li><strong>Get a Google Analytics tracking ID</strong></li>
+<li><strong>Update site configuration</strong>:
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">analytics</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">G-XXXXXXXXXX</span>
+</span></code></pre></div></li>
+</ol>
+<h3 id="performance-monitoring">Performance Monitoring<a class="headerlink" href="#performance-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Lighthouse CI</strong>: Automated performance audits</li>
+<li><strong>Core Web Vitals</strong>: Monitoring user experience metrics</li>
+<li><strong>Uptime monitoring</strong>: Server availability checks</li>
+</ul>
+<h2 id="search-configuration">🔍 Search Configuration<a class="headerlink" href="#search-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="search-features">Search Features<a class="headerlink" href="#search-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Full-text search</strong>: Searches all content</li>
+<li><strong>Search highlighting</strong>: Highlights search terms</li>
+<li><strong>Search suggestions</strong>: Provides search suggestions</li>
+<li><strong>Keyboard shortcuts</strong>: <code>S</code> to focus search</li>
+</ul>
+<h3 id="search-optimization">Search Optimization<a class="headerlink" href="#search-optimization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use descriptive headings</strong> for better search results</li>
+<li><strong>Include relevant keywords</strong> in content</li>
+<li><strong>Structure content logically</strong> with proper hierarchy</li>
+<li><strong>Use meta descriptions</strong> for pages</li>
+</ul>
+<h2 id="internationalization">🌐 Internationalization<a class="headerlink" href="#internationalization" title="Permanent link">&para;</a></h2>
+<h3 id="adding-languages">Adding Languages<a class="headerlink" href="#adding-languages" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Create language-specific directories</strong>:
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>docs/
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>├── en/
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>│   ├── index.md
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>│   └── ...
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>└── es/
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    ├── index.md
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    └── ...
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Configure language selection</strong> in the site configuration</p>
+</li>
+<li><strong>Update navigation</strong> for each language</li>
+<li><strong>Add language switcher</strong> to theme</li>
+</ol>
+<h2 id="troubleshooting">🔧 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<h4 id="build-errors">Build Errors<a class="headerlink" href="#build-errors" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Clear cache and rebuild</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>site/
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>npm<span class="w"> </span>run<span class="w"> </span>build<span class="w"> </span>--clean
+</span></code></pre></div>
+<h4 id="serve-issues">Serve Issues<a class="headerlink" href="#serve-issues" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Check for port conflicts</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>lsof<span class="w"> </span>-i<span class="w"> </span>:8000
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Use different port</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>npm<span class="w"> </span>run<span class="w"> </span>serve<span class="w"> </span>--<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
+</span></code></pre></div>
+<h4 id="plugin-errors">Plugin Errors<a class="headerlink" href="#plugin-errors" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Update dependencies</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Check plugin compatibility</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>npm<span class="w"> </span>--version
+</span></code></pre></div>
+<h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Check the project documentation</strong></li>
+<li><strong>Review the styling guide</strong></li>
+<li><strong>Search project issues on GitHub</strong></li>
+<li><strong>Ask in project discussions</strong></li>
+</ul>
+<h2 id="best-practices">📈 Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Optimize images</strong> before adding to documentation</li>
+<li><strong>Use appropriate image formats</strong> (WebP, SVG when possible)</li>
+<li><strong>Minimize external dependencies</strong></li>
+<li><strong>Enable compression</strong> in web server configuration</li>
+</ul>
+<h3 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use semantic HTML</strong> in custom components</li>
+<li><strong>Provide alt text</strong> for images</li>
+<li><strong>Ensure proper heading hierarchy</strong></li>
+<li><strong>Test with screen readers</strong></li>
+<li><strong>Maintain good color contrast</strong></li>
+</ul>
+<h3 id="seo">SEO<a class="headerlink" href="#seo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use descriptive page titles</strong></li>
+<li><strong>Include meta descriptions</strong></li>
+<li><strong>Structure content with proper headings</strong></li>
+<li><strong>Use internal linking</strong></li>
+<li><strong>Optimize for relevant keywords</strong></li>
+</ul>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Regular dependency updates</strong></li>
+<li><strong>Monitor for broken links</strong></li>
+<li><strong>Review and update content regularly</strong></li>
+<li><strong>Archive outdated information</strong></li>
+<li><strong>Maintain consistent style and tone</strong></li>
+</ul>
+<h2 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>We welcome contributions to the documentation! Please see our <a href="../contributing/">Contributing Guide</a> for detailed information on:</p>
+<ul>
+<li><strong>How to contribute</strong></li>
+<li><strong>Style guidelines</strong></li>
+<li><strong>Review process</strong></li>
+<li><strong>Code of conduct</strong></li>
+</ul>
+<h3 id="quick-contribution-steps">Quick Contribution Steps<a class="headerlink" href="#quick-contribution-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fork the repository</strong></li>
+<li><strong>Create a feature branch</strong></li>
+<li><strong>Make your changes</strong></li>
+<li><strong>Test locally</strong></li>
+<li><strong>Submit a pull request</strong></li>
+</ol>
+<h2 id="support">📞 Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>For documentation-related questions:</p>
+<ul>
+<li><strong>Create an issue</strong> in the GitHub repository</li>
+<li><strong>Start a discussion</strong> in GitHub Discussions</li>
+<li><strong>Contact the maintainers</strong> directly</li>
+</ul>
+<p>For general project support, see the main <a href="../README.md">README</a>.</p>
+<hr />
+<p><em>This documentation is continuously improved. Last updated: December 2024</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2025 Renesis Team</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

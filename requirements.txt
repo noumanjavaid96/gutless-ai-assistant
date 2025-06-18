@@ -1,0 +1,14 @@
+# Documentation Dependencies for Renesis AI Assistant
+# Essential packages for building and serving the documentation
+
+# Core Documentation Framework
+# Modern documentation build system
+# Documentation theme and styling
+
+# Essential Documentation Plugins
+# Minification and optimization
+# URL redirects and routing
+
+# Markdown Extensions
+markdown>=3.5.0,<4.0.0
+pymdown-extensions>=10.0.0,<11.0.0

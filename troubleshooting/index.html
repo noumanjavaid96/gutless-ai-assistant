@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Renesis Team">
+        <link rel="canonical" href="https://noumanjavaid96.github.io/gutless-ai-assistant/troubleshooting/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Troubleshooting - Renesis AI Assistant Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/extra.css" rel="stylesheet">
+        <link href="../stylesheets/modern-components.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Renesis AI Assistant Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting Started</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../configuration/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../usage/" class="dropdown-item">Usage</a>
+</li>
+                                    
+<li>
+    <a href="../deployment/" class="dropdown-item">Deployment</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Documentation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../api-reference/" class="dropdown-item">API Reference</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Contributing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../contributing/" class="dropdown-item">Contributing Guide</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../api-reference/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../faq/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/noumanjavaid96/gutless-ai-assistant/edit/main/docs/troubleshooting.md" class="nav-link">Edit on gutless-ai-assistant
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#troubleshooting-guide" class="nav-link">Troubleshooting Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#quick-diagnostics" class="nav-link">Quick Diagnostics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#health-check-commands" class="nav-link">Health Check Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#common-status-indicators" class="nav-link">Common Status Indicators</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#installation-issues" class="nav-link">Installation Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#python-version-problems" class="nav-link">Python Version Problems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#dependency-installation-failures" class="nav-link">Dependency Installation Failures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#virtual-environment-issues" class="nav-link">Virtual Environment Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuration-issues" class="nav-link">Configuration Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#environment-variables-not-loading" class="nav-link">Environment Variables Not Loading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#invalid-api-keys" class="nav-link">Invalid API Keys</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#slack-integration-issues" class="nav-link">Slack Integration Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#bot-not-responding" class="nav-link">Bot Not Responding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#bot-responds-with-errors" class="nav-link">Bot Responds with Errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#permission-denied-errors" class="nav-link">Permission Denied Errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#api-integration-issues" class="nav-link">API Integration Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#openai-api-problems" class="nav-link">OpenAI API Problems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#pinecone-issues" class="nav-link">Pinecone Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#content-ingestion-issues" class="nav-link">Content Ingestion Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#transcription-failures" class="nav-link">Transcription Failures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#pdf-processing-issues" class="nav-link">PDF Processing Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#embedding-generation-failures" class="nav-link">Embedding Generation Failures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#performance-issues" class="nav-link">Performance Issues</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#slow-response-times" class="nav-link">Slow Response Times</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#memory-issues" class="nav-link">Memory Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logging-and-debugging" class="nav-link">Logging and Debugging</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#enable-debug-logging" class="nav-link">Enable Debug Logging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#log-file-locations" class="nav-link">Log File Locations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#debug-commands" class="nav-link">Debug Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#getting-help" class="nav-link">Getting Help</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#before-asking-for-help" class="nav-link">Before Asking for Help</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#information-to-include" class="nav-link">Information to Include</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#emergency-procedures" class="nav-link">Emergency Procedures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h1>
+<p>This guide helps you diagnose and resolve common issues with the Renesis AI Assistant.</p>
+<h2 id="quick-diagnostics">Quick Diagnostics<a class="headerlink" href="#quick-diagnostics" title="Permanent link">&para;</a></h2>
+<h3 id="health-check-commands">Health Check Commands<a class="headerlink" href="#health-check-commands" title="Permanent link">&para;</a></h3>
+<p>Run these commands to quickly check system health:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Test configuration loading</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from config.settings import settings; print(&#39;✅ Configuration loaded&#39;)&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Test API connections</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>scripts/test_connections.py
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Check bot status</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from src.bot import SlackBot; print(&#39;✅ Bot module imports successfully&#39;)&quot;</span>
+</span></code></pre></div>
+<h3 id="common-status-indicators">Common Status Indicators<a class="headerlink" href="#common-status-indicators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Bot online in Slack</td>
+<td>Working correctly</td>
+<td>None needed</td>
+</tr>
+<tr>
+<td>⚠️ Bot appears offline</td>
+<td>Connection issue</td>
+<td>Check tokens and network</td>
+</tr>
+<tr>
+<td>❌ Bot not responding</td>
+<td>Critical error</td>
+<td>Check logs and restart</td>
+</tr>
+<tr>
+<td>🔄 Slow responses</td>
+<td>Performance issue</td>
+<td>Check API rate limits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation-issues">Installation Issues<a class="headerlink" href="#installation-issues" title="Permanent link">&para;</a></h2>
+<h3 id="python-version-problems">Python Version Problems<a class="headerlink" href="#python-version-problems" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: <code>SyntaxError</code> or compatibility issues</p>
+<p><strong>Solution</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Check Python version</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>--version
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Should be 3.8 or higher</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># If using wrong version, create virtual environment with correct Python</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>python3.8<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># or</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gutless-assistant<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</span></code></pre></div></p>
+<h3 id="dependency-installation-failures">Dependency Installation Failures<a class="headerlink" href="#dependency-installation-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: <code>pip install</code> fails with errors</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>
+<p><strong>Upgrade pip</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Clear pip cache</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>cache<span class="w"> </span>purge
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Install with verbose output</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>-v
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Platform-specific issues</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Windows: Install Visual C++ Build Tools</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># macOS: Install Xcode command line tools</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>xcode-select<span class="w"> </span>--install
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Linux: Install build essentials</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential
+</span></code></pre></div></p>
+</li>
+</ol>
+<h3 id="virtual-environment-issues">Virtual Environment Issues<a class="headerlink" href="#virtual-environment-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Packages not found or wrong versions</p>
+<p><strong>Solution</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Deactivate and recreate virtual environment</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>deactivate
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>rm<span class="w"> </span>-rf<span class="w"> </span>venv<span class="w">  </span><span class="c1"># or rmdir /s venv on Windows</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># or venv\Scripts\activate on Windows</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div></p>
+<h2 id="configuration-issues">Configuration Issues<a class="headerlink" href="#configuration-issues" title="Permanent link">&para;</a></h2>
+<h3 id="environment-variables-not-loading">Environment Variables Not Loading<a class="headerlink" href="#environment-variables-not-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: <code>KeyError</code> or <code>None</code> values for environment variables</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Check if .env file exists</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ls<span class="w"> </span>-la<span class="w"> </span>.env
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Check environment variable loading</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import os; from dotenv import load_dotenv; load_dotenv(); print(os.getenv(&#39;OPENAI_API_KEY&#39;)[:10] if os.getenv(&#39;OPENAI_API_KEY&#39;) else &#39;Not found&#39;)&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>
+<p><strong>Create .env file</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Edit .env with your actual values</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Check file format</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Correct format (no spaces around =)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>OPENAI_API_KEY=sk-your-key-here
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># Incorrect format
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>OPENAI_API_KEY = sk-your-key-here
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Verify file location</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># .env should be in project root</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>gutless-ai-assistant/
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├──<span class="w"> </span>.env<span class="w">  </span>←<span class="w"> </span>Here
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>├──<span class="w"> </span>src/
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>└──<span class="w"> </span>docs/
+</span></code></pre></div></p>
+</li>
+</ol>
+<h3 id="invalid-api-keys">Invalid API Keys<a class="headerlink" href="#invalid-api-keys" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Authentication errors from external APIs</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Test OpenAI key</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span>https://api.openai.com/v1/models
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Test Pinecone key</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import pinecone; pinecone.init(api_key=&#39;your-key&#39;, environment=&#39;your-env&#39;); print(&#39;✅ Pinecone connected&#39;)&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Regenerate API keys</strong> from respective platforms</li>
+<li><strong>Check key format</strong>:</li>
+<li>OpenAI: <code>sk-...</code> (starts with sk-)</li>
+<li>Pinecone: UUID format</li>
+<li>Slack Bot: <code>xoxb-...</code></li>
+<li>
+<p>Slack App: <code>xapp-...</code></p>
+</li>
+<li>
+<p><strong>Verify permissions</strong> on API keys</p>
+</li>
+</ol>
+<h2 id="slack-integration-issues">Slack Integration Issues<a class="headerlink" href="#slack-integration-issues" title="Permanent link">&para;</a></h2>
+<h3 id="bot-not-responding">Bot Not Responding<a class="headerlink" href="#bot-not-responding" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Bot appears online but doesn't respond to messages</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Check bot logs</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/app.log
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Test bot locally</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>python<span class="w"> </span>src/bot.py
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Check Event Subscriptions</strong>:</li>
+<li>Go to Slack App settings</li>
+<li>Verify <code>app_mention</code> and <code>message.im</code> events are enabled</li>
+<li>
+<p>Check Request URL is correct</p>
+</li>
+<li>
+<p><strong>Verify Bot Permissions</strong>:</p>
+</li>
+<li><code>app_mentions:read</code></li>
+<li><code>chat:write</code></li>
+<li><code>im:read</code></li>
+<li>
+<p><code>im:write</code></p>
+</li>
+<li>
+<p><strong>Socket Mode Issues</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Enable Socket Mode in Slack app settings</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># Ensure SLACK_APP_TOKEN is set</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># Check if port 3000 is available</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<h3 id="bot-responds-with-errors">Bot Responds with Errors<a class="headerlink" href="#bot-responds-with-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Bot sends error messages instead of answers</p>
+<p><strong>Common Error Messages</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Error Message</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"I'm having trouble processing your request"</td>
+<td>General error</td>
+<td>Check logs for specific error</td>
+</tr>
+<tr>
+<td>"No relevant content found"</td>
+<td>Empty search results</td>
+<td>Check content ingestion</td>
+</tr>
+<tr>
+<td>"Service temporarily unavailable"</td>
+<td>API rate limit or outage</td>
+<td>Wait and retry</td>
+</tr>
+<tr>
+<td>"Invalid query format"</td>
+<td>Query preprocessing error</td>
+<td>Rephrase question</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permission-denied-errors">Permission Denied Errors<a class="headerlink" href="#permission-denied-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Bot can't send messages or access channels</p>
+<p><strong>Solution</strong>:
+1. <strong>Reinstall bot</strong> to workspace
+2. <strong>Check channel permissions</strong>:
+   - Invite bot to private channels
+   - Verify bot has write permissions
+3. <strong>Update OAuth scopes</strong> if needed</p>
+<h2 id="api-integration-issues">API Integration Issues<a class="headerlink" href="#api-integration-issues" title="Permanent link">&para;</a></h2>
+<h3 id="openai-api-problems">OpenAI API Problems<a class="headerlink" href="#openai-api-problems" title="Permanent link">&para;</a></h3>
+<p><strong>Rate Limit Exceeded</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Error: Rate limit exceeded
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Implement exponential backoff (already included)
+- Reduce request frequency
+- Upgrade OpenAI plan
+- Check for infinite loops in code</p>
+<p><strong>Invalid Model Access</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Error: The model &#39;gpt-4o&#39; does not exist
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Verify model name in configuration
+- Check OpenAI account has access to GPT-4
+- Use alternative model (gpt-3.5-turbo)</p>
+<p><strong>Token Limit Exceeded</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Error: This model&#39;s maximum context length is X tokens
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Reduce context size in queries
+- Implement context truncation
+- Split large queries</p>
+<h3 id="pinecone-issues">Pinecone Issues<a class="headerlink" href="#pinecone-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Index Not Found</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Error: Index &#39;gutless-assistant&#39; not found
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+1. <strong>Create index</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pinecone</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">pinecone</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-key&quot;</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="s2">&quot;your-env&quot;</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">pinecone</span><span class="o">.</span><span class="n">create_index</span><span class="p">(</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;gutless-assistant&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">dimension</span><span class="o">=</span><span class="mi">1536</span><span class="p">,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cosine&quot;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<ol>
+<li><strong>Check index name</strong> in configuration</li>
+</ol>
+<p><strong>Connection Timeout</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Error: Connection timeout
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Check network connectivity
+- Verify Pinecone environment setting
+- Implement retry logic</p>
+<p><strong>Quota Exceeded</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Error: Quota exceeded
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Upgrade Pinecone plan
+- Optimize vector storage
+- Implement batch operations</p>
+<h2 id="content-ingestion-issues">Content Ingestion Issues<a class="headerlink" href="#content-ingestion-issues" title="Permanent link">&para;</a></h2>
+<h3 id="transcription-failures">Transcription Failures<a class="headerlink" href="#transcription-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Audio/video files not transcribing</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Check file format</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>file<span class="w"> </span>audio_file.mp3
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Check file size</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>ls<span class="w"> </span>-lh<span class="w"> </span>audio_file.mp3
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Test transcription manually</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from src.content_ingestion.transcribe import TranscriptionService; ts = TranscriptionService(); result = ts.transcribe_file(&#39;path/to/file&#39;)&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Supported formats</strong>: mp3, wav, m4a, mp4</li>
+<li><strong>File size limit</strong>: 25MB for Whisper</li>
+<li><strong>Audio quality</strong>: Ensure clear audio</li>
+<li><strong>File path</strong>: Use absolute paths</li>
+</ol>
+<h3 id="pdf-processing-issues">PDF Processing Issues<a class="headerlink" href="#pdf-processing-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: PDF content not extracting properly</p>
+<p><strong>Common Issues</strong>:
+- Scanned PDFs (image-based)
+- Password-protected PDFs
+- Corrupted files
+- Complex layouts</p>
+<p><strong>Solutions</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Test PDF extraction</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">src.content_ingestion.pdf_parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">PDFParser</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">PDFParser</span><span class="p">()</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">content</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">extract_text</span><span class="p">(</span><span class="s2">&quot;path/to/file.pdf&quot;</span><span class="p">)</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>  <span class="c1"># First 500 characters</span>
+</span></code></pre></div></p>
+<h3 id="embedding-generation-failures">Embedding Generation Failures<a class="headerlink" href="#embedding-generation-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Embeddings not generating for content</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Test embedding service</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">src.embedding_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmbeddingService</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">service</span> <span class="o">=</span> <span class="n">EmbeddingService</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-key&quot;</span><span class="p">)</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">vector</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">generate_embedding</span><span class="p">(</span><span class="s2">&quot;test text&quot;</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Embedding dimension: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:
+- Check OpenAI API key
+- Verify text is not empty
+- Handle special characters
+- Check text length limits</p>
+<h2 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h2>
+<h3 id="slow-response-times">Slow Response Times<a class="headerlink" href="#slow-response-times" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Bot takes too long to respond</p>
+<p><strong>Diagnosis</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Check response times in logs</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>grep<span class="w"> </span><span class="s2">&quot;processing_time&quot;</span><span class="w"> </span>logs/app.log
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Monitor API response times</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>grep<span class="w"> </span><span class="s2">&quot;openai_response_time&quot;</span><span class="w"> </span>logs/app.log
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>grep<span class="w"> </span><span class="s2">&quot;pinecone_response_time&quot;</span><span class="w"> </span>logs/app.log
+</span></code></pre></div></p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Optimize vector search</strong>:</li>
+<li>Reduce <code>top_k</code> value</li>
+<li>Add metadata filters</li>
+<li>
+<p>Use smaller embedding dimensions</p>
+</li>
+<li>
+<p><strong>Implement caching</strong>:</p>
+</li>
+<li>Cache frequent queries</li>
+<li>Cache embeddings</li>
+<li>
+<p>Use Redis for session storage</p>
+</li>
+<li>
+<p><strong>Optimize content chunks</strong>:</p>
+</li>
+<li>Reduce chunk size</li>
+<li>Improve chunk quality</li>
+<li>Remove irrelevant content</li>
+</ol>
+<h3 id="memory-issues">Memory Issues<a class="headerlink" href="#memory-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: High memory usage or out-of-memory errors</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>
+<p><strong>Batch processing</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Process in smaller batches</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">(</span><span class="n">large_list</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="n">process_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Memory monitoring</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memory usage: </span><span class="si">{</span><span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span><span class="o">.</span><span class="n">percent</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Garbage collection</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<h2 id="logging-and-debugging">Logging and Debugging<a class="headerlink" href="#logging-and-debugging" title="Permanent link">&para;</a></h2>
+<h3 id="enable-debug-logging">Enable Debug Logging<a class="headerlink" href="#enable-debug-logging" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># In .env file</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">LOG_LEVEL</span><span class="o">=</span><span class="n">DEBUG</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">DEBUG</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c1"># Or programmatically</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="log-file-locations">Log File Locations<a class="headerlink" href="#log-file-locations" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Application logs</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/app.log
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># Error logs</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/error.log
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1"># Slack events</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/slack.log
+</span></code></pre></div>
+<h3 id="debug-commands">Debug Commands<a class="headerlink" href="#debug-commands" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Test individual components</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>python<span class="w"> </span>-m<span class="w"> </span>src.embedding_service
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>python<span class="w"> </span>-m<span class="w"> </span>src.pinecone_service
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>python<span class="w"> </span>-m<span class="w"> </span>src.core_logic
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="c1"># Run with debug output</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>python<span class="w"> </span>-u<span class="w"> </span>src/bot.py<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>debug.log
+</span></code></pre></div>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<h3 id="before-asking-for-help">Before Asking for Help<a class="headerlink" href="#before-asking-for-help" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Check logs</strong> for specific error messages</li>
+<li><strong>Search this guide</strong> for similar issues</li>
+<li><strong>Test individual components</strong> to isolate the problem</li>
+<li><strong>Gather system information</strong>:</li>
+<li>Python version</li>
+<li>Operating system</li>
+<li>Package versions</li>
+<li>Error messages</li>
+</ol>
+<h3 id="information-to-include">Information to Include<a class="headerlink" href="#information-to-include" title="Permanent link">&para;</a></h3>
+<p>When reporting issues, include:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># System information</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>python<span class="w"> </span>--version
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>pip<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(openai|pinecone|slack)&quot;</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="c1"># Error logs (last 50 lines)</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>tail<span class="w"> </span>-50<span class="w"> </span>logs/app.log
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="c1"># Configuration (without sensitive data)</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(OPENAI|PINECONE|SLACK)&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/=.*/=****/&#39;</span>
+</span></code></pre></div>
+<h3 id="emergency-procedures">Emergency Procedures<a class="headerlink" href="#emergency-procedures" title="Permanent link">&para;</a></h3>
+<p><strong>If bot is completely unresponsive</strong>:</p>
+<ol>
+<li>
+<p><strong>Restart the application</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Stop current process</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Ctrl+C
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># Restart</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>python<span class="w"> </span>src/bot.py
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Reset to known good state</strong>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># Pull latest code</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="c1"># Reinstall dependencies</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--force-reinstall
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="c1"># Clear cache</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>rm<span class="w"> </span>-rf<span class="w"> </span>__pycache__<span class="w"> </span>src/__pycache__
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Fallback configuration</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a># Use basic settings
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>OPENAI_MODEL=gpt-3.5-turbo
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>PINECONE_TOP_K=3
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>LOG_LEVEL=INFO
+</span></code></pre></div></p>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="../faq/">FAQ</a></p>
+</li>
+<li>
+<p><a href="../api-reference/">API Reference</a></p>
+</li>
+<li><a href="../configuration/">Configuration Guide</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2025 Renesis Team</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

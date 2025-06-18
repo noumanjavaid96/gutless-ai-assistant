@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Renesis Team">
+        <link rel="canonical" href="https://noumanjavaid96.github.io/gutless-ai-assistant/usage/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Usage - Renesis AI Assistant Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/extra.css" rel="stylesheet">
+        <link href="../stylesheets/modern-components.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Renesis AI Assistant Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting Started</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../configuration/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Usage</a>
+</li>
+                                    
+<li>
+    <a href="../deployment/" class="dropdown-item">Deployment</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Documentation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../api-reference/" class="dropdown-item">API Reference</a>
+</li>
+                                    
+<li>
+    <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Contributing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../contributing/" class="dropdown-item">Contributing Guide</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../configuration/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../deployment/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/noumanjavaid96/gutless-ai-assistant/edit/main/docs/usage.md" class="nav-link">Edit on gutless-ai-assistant
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#usage-guide" class="nav-link">Usage Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#inviting-the-bot-to-channels" class="nav-link">Inviting the Bot to Channels</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#direct-messages" class="nav-link">Direct Messages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-ask-questions" class="nav-link">How to Ask Questions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#mentioning-the-bot" class="nav-link">Mentioning the Bot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#direct-questions" class="nav-link">Direct Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#question-types" class="nav-link">Question Types</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#content-specific-questions" class="nav-link">Content-Specific Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#clarification-questions" class="nav-link">Clarification Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#reference-questions" class="nav-link">Reference Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#understanding-bot-responses" class="nav-link">Understanding Bot Responses</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#response-format" class="nav-link">Response Format</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#example-response" class="nav-link">Example Response</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#source-links" class="nav-link">Source Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#best-practices" class="nav-link">Best Practices</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#writing-effective-questions" class="nav-link">Writing Effective Questions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#good-questions" class="nav-link">✅ Good Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#avoid-these" class="nav-link">❌ Avoid These</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#tips-for-better-results" class="nav-link">Tips for Better Results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#question-examples-by-category" class="nav-link">Question Examples by Category</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#nutrition-diet" class="nav-link">Nutrition &amp; Diet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#symptoms-reactions" class="nav-link">Symptoms &amp; Reactions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#protocols-procedures" class="nav-link">Protocols &amp; Procedures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bot-capabilities" class="nav-link">Bot Capabilities</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#what-the-bot-can-do" class="nav-link">What the Bot Can Do</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#what-the-bot-cannot-do" class="nav-link">What the Bot Cannot Do</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#response-time" class="nav-link">Response Time</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#privacy-data" class="nav-link">Privacy &amp; Data</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#whats-stored" class="nav-link">What's Stored</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#whats-not-stored" class="nav-link">What's Not Stored</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#getting-help" class="nav-link">Getting Help</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#if-the-bot-doesnt-understand" class="nav-link">If the Bot Doesn't Understand</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#if-you-get-unexpected-results" class="nav-link">If You Get Unexpected Results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#reporting-issues" class="nav-link">Reporting Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#advanced-usage" class="nav-link">Advanced Usage</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#multi-part-questions" class="nav-link">Multi-Part Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#requesting-specific-formats" class="nav-link">Requesting Specific Formats</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="usage-guide">Usage Guide<a class="headerlink" href="#usage-guide" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to use the Renesis AI Assistant once it's installed and configured.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="inviting-the-bot-to-channels">Inviting the Bot to Channels<a class="headerlink" href="#inviting-the-bot-to-channels" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In your Slack workspace, go to the channel where you want to use the bot</li>
+<li>Type <code>/invite @gutless-assistant</code> (replace with your bot's name)</li>
+<li>The bot will join the channel and be ready to answer questions</li>
+</ol>
+<h3 id="direct-messages">Direct Messages<a class="headerlink" href="#direct-messages" title="Permanent link">&para;</a></h3>
+<p>You can also send direct messages to the bot:</p>
+<ol>
+<li>Click on the bot's name in your Slack workspace</li>
+<li>Start a direct message conversation</li>
+<li>Ask your questions directly</li>
+</ol>
+<h2 id="how-to-ask-questions">How to Ask Questions<a class="headerlink" href="#how-to-ask-questions" title="Permanent link">&para;</a></h2>
+<h3 id="mentioning-the-bot">Mentioning the Bot<a class="headerlink" href="#mentioning-the-bot" title="Permanent link">&para;</a></h3>
+<p>In channels, mention the bot to get its attention:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@gutless-assistant What are the key principles covered in Week 1?
+</span></code></pre></div>
+<h3 id="direct-questions">Direct Questions<a class="headerlink" href="#direct-questions" title="Permanent link">&para;</a></h3>
+<p>In direct messages, you can ask questions without mentioning:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Can you explain the gut health fundamentals from the first week?
+</span></code></pre></div>
+<h3 id="question-types">Question Types<a class="headerlink" href="#question-types" title="Permanent link">&para;</a></h3>
+<p>The bot can handle various types of questions about Week 1 content:</p>
+<h4 id="content-specific-questions">Content-Specific Questions<a class="headerlink" href="#content-specific-questions" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@gutless-assistant What foods should I avoid in Week 1?
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>@gutless-assistant How long should I follow the Week 1 protocol?
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>@gutless-assistant What are the symptoms I might experience?
+</span></code></pre></div>
+<h4 id="clarification-questions">Clarification Questions<a class="headerlink" href="#clarification-questions" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>@gutless-assistant Can you explain more about [specific topic]?
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>@gutless-assistant What did the coach mean when they said [quote]?
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>@gutless-assistant I didn&#39;t understand the part about [topic]
+</span></code></pre></div>
+<h4 id="reference-questions">Reference Questions<a class="headerlink" href="#reference-questions" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>@gutless-assistant Where can I find the Week 1 meal plan?
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>@gutless-assistant What time in the video was this discussed?
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>@gutless-assistant Is there a PDF with this information?
+</span></code></pre></div>
+<h2 id="understanding-bot-responses">Understanding Bot Responses<a class="headerlink" href="#understanding-bot-responses" title="Permanent link">&para;</a></h2>
+<h3 id="response-format">Response Format<a class="headerlink" href="#response-format" title="Permanent link">&para;</a></h3>
+<p>The bot provides structured responses that include:</p>
+<ol>
+<li><strong>Direct Answer</strong>: A clear, concise answer to your question</li>
+<li><strong>Source References</strong>: Links to relevant video timestamps or PDF sections</li>
+<li><strong>Additional Context</strong>: Related information that might be helpful</li>
+</ol>
+<h3 id="example-response">Example Response<a class="headerlink" href="#example-response" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>🤖 **Renesis AI Assistant**
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Based on the Week 1 content, here are the key foods to avoid:
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>• Processed foods and refined sugars
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>• Gluten-containing grains
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>• Dairy products (except for specific exceptions mentioned)
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>• Inflammatory oils like vegetable and seed oils
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>📹 **Video Reference**: [Week 1 Coaching Call - 15:30-18:45](link-to-video)
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>📄 **PDF Reference**: Week 1 Food Guide, Page 3
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>💡 **Additional Info**: The coach also mentioned that individual tolerance may vary, so pay attention to your body&#39;s responses.
+</span></code></pre></div>
+<h3 id="source-links">Source Links<a class="headerlink" href="#source-links" title="Permanent link">&para;</a></h3>
+<p>The bot provides clickable links that take you directly to:
+- <strong>Video timestamps</strong>: Exact moments in coaching calls where topics are discussed
+- <strong>PDF sections</strong>: Specific pages or sections in program materials
+- <strong>Additional resources</strong>: Related content that might be helpful</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="writing-effective-questions">Writing Effective Questions<a class="headerlink" href="#writing-effective-questions" title="Permanent link">&para;</a></h3>
+<h4 id="good-questions">✅ Good Questions<a class="headerlink" href="#good-questions" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@gutless-assistant What supplements are recommended for Week 1?
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>@gutless-assistant How should I prepare for the elimination phase?
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>@gutless-assistant What are the expected timeline and milestones?
+</span></code></pre></div>
+<h4 id="avoid-these">❌ Avoid These<a class="headerlink" href="#avoid-these" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@gutless-assistant Help me
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>@gutless-assistant What should I do?
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>@gutless-assistant Tell me everything
+</span></code></pre></div>
+<h3 id="tips-for-better-results">Tips for Better Results<a class="headerlink" href="#tips-for-better-results" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Be Specific</strong>: Ask about particular topics, protocols, or concepts</li>
+<li><strong>Use Keywords</strong>: Include relevant terms from the program materials</li>
+<li><strong>Context Matters</strong>: Mention if you're asking about a specific day, phase, or situation</li>
+<li><strong>Follow Up</strong>: Ask clarifying questions if you need more detail</li>
+</ol>
+<h3 id="question-examples-by-category">Question Examples by Category<a class="headerlink" href="#question-examples-by-category" title="Permanent link">&para;</a></h3>
+<h4 id="nutrition-diet">Nutrition &amp; Diet<a class="headerlink" href="#nutrition-diet" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@gutless-assistant What&#39;s the difference between Phase 1 and Phase 2 foods?
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>@gutless-assistant How much water should I drink during Week 1?
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>@gutless-assistant Are there any emergency foods I can eat if I&#39;m struggling?
+</span></code></pre></div>
+<h4 id="symptoms-reactions">Symptoms &amp; Reactions<a class="headerlink" href="#symptoms-reactions" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@gutless-assistant What symptoms are normal during the first week?
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>@gutless-assistant How long do detox symptoms typically last?
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>@gutless-assistant When should I be concerned about a reaction?
+</span></code></pre></div>
+<h4 id="protocols-procedures">Protocols &amp; Procedures<a class="headerlink" href="#protocols-procedures" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>@gutless-assistant What&#39;s the morning routine for Week 1?
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>@gutless-assistant How do I properly do the elimination protocol?
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>@gutless-assistant What should I track during this week?
+</span></code></pre></div>
+<h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>@gutless-assistant I&#39;m having trouble with [specific issue], what should I do?
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>@gutless-assistant The protocol isn&#39;t working as expected, what might be wrong?
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>@gutless-assistant I missed a day, how do I get back on track?
+</span></code></pre></div>
+<h2 id="bot-capabilities">Bot Capabilities<a class="headerlink" href="#bot-capabilities" title="Permanent link">&para;</a></h2>
+<h3 id="what-the-bot-can-do">What the Bot Can Do<a class="headerlink" href="#what-the-bot-can-do" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Answer questions about Week 1 content</li>
+<li>✅ Provide video timestamps for specific topics</li>
+<li>✅ Reference relevant PDF materials</li>
+<li>✅ Explain concepts and protocols</li>
+<li>✅ Offer troubleshooting guidance</li>
+<li>✅ Provide context and background information</li>
+</ul>
+<h3 id="what-the-bot-cannot-do">What the Bot Cannot Do<a class="headerlink" href="#what-the-bot-cannot-do" title="Permanent link">&para;</a></h3>
+<ul>
+<li>❌ Provide medical advice or diagnoses</li>
+<li>❌ Answer questions about content beyond Week 1</li>
+<li>❌ Make personalized recommendations without program context</li>
+<li>❌ Replace professional medical consultation</li>
+<li>❌ Access your personal health data</li>
+</ul>
+<h2 id="response-time">Response Time<a class="headerlink" href="#response-time" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Typical Response</strong>: 2-5 seconds</li>
+<li><strong>Complex Questions</strong>: 5-10 seconds</li>
+<li><strong>High Load</strong>: May take up to 30 seconds</li>
+</ul>
+<p>If the bot doesn't respond within 30 seconds, try asking again or check the <a href="../troubleshooting/">troubleshooting guide</a>.</p>
+<h2 id="privacy-data">Privacy &amp; Data<a class="headerlink" href="#privacy-data" title="Permanent link">&para;</a></h2>
+<h3 id="whats-stored">What's Stored<a class="headerlink" href="#whats-stored" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Your questions and the bot's responses are logged for improvement purposes</li>
+<li>No personal health information is stored beyond what you explicitly share in questions</li>
+<li>All data is handled according to privacy best practices</li>
+</ul>
+<h3 id="whats-not-stored">What's Not Stored<a class="headerlink" href="#whats-not-stored" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Private Slack messages outside of bot interactions</li>
+<li>Personal files or attachments</li>
+<li>Conversation history beyond the current session</li>
+</ul>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<h3 id="if-the-bot-doesnt-understand">If the Bot Doesn't Understand<a class="headerlink" href="#if-the-bot-doesnt-understand" title="Permanent link">&para;</a></h3>
+<p>Try rephrasing your question:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Original: &quot;What about the thing with the gut?&quot;
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Better: &quot;What are the gut healing protocols in Week 1?&quot;
+</span></code></pre></div></p>
+<h3 id="if-you-get-unexpected-results">If You Get Unexpected Results<a class="headerlink" href="#if-you-get-unexpected-results" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check if your question is about Week 1 content</li>
+<li>Try being more specific</li>
+<li>Ask for clarification: "Can you explain that differently?"</li>
+<li>Check the <a href="../faq/">FAQ</a> for common issues</li>
+</ol>
+<h3 id="reporting-issues">Reporting Issues<a class="headerlink" href="#reporting-issues" title="Permanent link">&para;</a></h3>
+<p>If you encounter problems:</p>
+<ol>
+<li>Note the exact question you asked</li>
+<li>Describe what happened vs. what you expected</li>
+<li>Check the <a href="../troubleshooting/">troubleshooting guide</a></li>
+<li>Contact support if the issue persists</li>
+</ol>
+<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="multi-part-questions">Multi-Part Questions<a class="headerlink" href="#multi-part-questions" title="Permanent link">&para;</a></h3>
+<p>You can ask follow-up questions in the same conversation:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>User: @gutless-assistant What foods are eliminated in Week 1?
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Bot: [Provides list of eliminated foods]
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>User: Why are these foods eliminated?
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Bot: [Explains the reasoning behind eliminations]
+</span></code></pre></div>
+<h3 id="requesting-specific-formats">Requesting Specific Formats<a class="headerlink" href="#requesting-specific-formats" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>@gutless-assistant Can you give me a bullet-point summary of Week 1 protocols?
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>@gutless-assistant List the top 5 most important things to remember for Week 1
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>@gutless-assistant What&#39;s a step-by-step guide for starting Week 1?
+</span></code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../troubleshooting/">Troubleshooting Guide</a></li>
+<li><a href="../faq/">FAQ</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2025 Renesis Team</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

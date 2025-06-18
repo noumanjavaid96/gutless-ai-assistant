@@ -1,0 +1,147 @@
+<svg width="700" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="userGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="responseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000020"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">Query Processing Flow</text>
+  
+  <!-- Step 1: User Query -->
+  <rect x="250" y="60" width="200" height="60" rx="8" fill="url(#userGradient)" filter="url(#shadow)"/>
+  <text x="350" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">1. User Query (Slack)</text>
+  <text x="350" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Natural language input</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 120 L350 150" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Slack Bot Interface -->
+  <rect x="250" y="150" width="200" height="80" rx="8" fill="url(#userGradient)" filter="url(#shadow)"/>
+  <text x="350" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">2. Slack Bot Interface</text>
+  <text x="270" y="195" font-family="Arial, sans-serif" font-size="10" fill="white">• Parse message</text>
+  <text x="270" y="210" font-family="Arial, sans-serif" font-size="10" fill="white">• Extract query</text>
+  <text x="270" y="225" font-family="Arial, sans-serif" font-size="10" fill="white">• Validate input</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 230 L350 260" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Core Logic Orchestrator -->
+  <rect x="250" y="260" width="200" height="80" rx="8" fill="url(#processGradient)" filter="url(#shadow)"/>
+  <text x="350" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">3. Core Logic Orchestrator</text>
+  <text x="270" y="305" font-family="Arial, sans-serif" font-size="10" fill="white">• Preprocess query</text>
+  <text x="270" y="320" font-family="Arial, sans-serif" font-size="10" fill="white">• Route to embedding service</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 340 L350 370" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Embedding Service -->
+  <rect x="250" y="370" width="200" height="80" rx="8" fill="url(#aiGradient)" filter="url(#shadow)"/>
+  <text x="350" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">4. Embedding Service</text>
+  <text x="270" y="415" font-family="Arial, sans-serif" font-size="10" fill="white">• Generate query embedding</text>
+  <text x="270" y="430" font-family="Arial, sans-serif" font-size="10" fill="white">• Return vector (1536D)</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 450 L350 480" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Pinecone Service -->
+  <rect x="250" y="480" width="200" height="80" rx="8" fill="url(#aiGradient)" filter="url(#shadow)"/>
+  <text x="350" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">5. Pinecone Service</text>
+  <text x="270" y="525" font-family="Arial, sans-serif" font-size="10" fill="white">• Similarity search</text>
+  <text x="270" y="540" font-family="Arial, sans-serif" font-size="10" fill="white">• Apply filters</text>
+  <text x="270" y="555" font-family="Arial, sans-serif" font-size="10" fill="white">• Return relevant chunks</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 560 L350 590" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 6: Context Assembly -->
+  <rect x="250" y="590" width="200" height="80" rx="8" fill="url(#processGradient)" filter="url(#shadow)"/>
+  <text x="350" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">6. Context Assembly</text>
+  <text x="270" y="635" font-family="Arial, sans-serif" font-size="10" fill="white">• Rank results</text>
+  <text x="270" y="650" font-family="Arial, sans-serif" font-size="10" fill="white">• Combine chunks</text>
+  <text x="270" y="665" font-family="Arial, sans-serif" font-size="10" fill="white">• Prepare context</text>
+  
+  <!-- Arrow down -->
+  <path d="M350 670 L350 700" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 7: LLM Processing -->
+  <rect x="250" y="700" width="200" height="80" rx="8" fill="url(#aiGradient)" filter="url(#shadow)"/>
+  <text x="350" y="720" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">7. LLM Processing</text>
+  <text x="350" y="735" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">(OpenAI GPT-4o)</text>
+  <text x="270" y="755" font-family="Arial, sans-serif" font-size="10" fill="white">• Send query + context</text>
+  <text x="270" y="770" font-family="Arial, sans-serif" font-size="10" fill="white">• Generate answer</text>
+  
+  <!-- Arrow right to response formatting -->
+  <path d="M450 740 L480 740" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 8: Response Formatting -->
+  <rect x="480" y="700" width="180" height="80" rx="8" fill="url(#responseGradient)" filter="url(#shadow)"/>
+  <text x="570" y="720" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">8. Response Formatting</text>
+  <text x="490" y="740" font-family="Arial, sans-serif" font-size="9" fill="white">• Add source references</text>
+  <text x="490" y="755" font-family="Arial, sans-serif" font-size="9" fill="white">• Format for Slack</text>
+  <text x="490" y="770" font-family="Arial, sans-serif" font-size="9" fill="white">• Include metadata</text>
+  
+  <!-- Arrow down from response formatting -->
+  <path d="M570 780 L570 810" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 9: Slack Response -->
+  <rect x="480" y="810" width="180" height="60" rx="8" fill="url(#userGradient)" filter="url(#shadow)"/>
+  <text x="570" y="835" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">9. Slack Response</text>
+  <text x="570" y="855" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Send to user</text>
+  
+  <!-- Side panel with timing information -->
+  <rect x="50" y="150" width="150" height="500" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <text x="125" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Processing Times</text>
+  
+  <text x="60" y="200" font-family="Arial, sans-serif" font-size="9" fill="#374151">Parse & Validate:</text>
+  <text x="60" y="215" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~50ms</text>
+  
+  <text x="60" y="240" font-family="Arial, sans-serif" font-size="9" fill="#374151">Preprocessing:</text>
+  <text x="60" y="255" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~100ms</text>
+  
+  <text x="60" y="280" font-family="Arial, sans-serif" font-size="9" fill="#374151">Embedding Gen:</text>
+  <text x="60" y="295" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~200ms</text>
+  
+  <text x="60" y="320" font-family="Arial, sans-serif" font-size="9" fill="#374151">Vector Search:</text>
+  <text x="60" y="335" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~150ms</text>
+  
+  <text x="60" y="360" font-family="Arial, sans-serif" font-size="9" fill="#374151">Context Assembly:</text>
+  <text x="60" y="375" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~100ms</text>
+  
+  <text x="60" y="400" font-family="Arial, sans-serif" font-size="9" fill="#374151">LLM Processing:</text>
+  <text x="60" y="415" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~2-5s</text>
+  
+  <text x="60" y="440" font-family="Arial, sans-serif" font-size="9" fill="#374151">Response Format:</text>
+  <text x="60" y="455" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~50ms</text>
+  
+  <text x="60" y="480" font-family="Arial, sans-serif" font-size="9" fill="#374151">Slack Delivery:</text>
+  <text x="60" y="495" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">~100ms</text>
+  
+  <rect x="60" y="520" width="120" height="30" rx="4" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="120" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#5b21b6">Total: ~3-6 seconds</text>
+  
+  <text x="60" y="570" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">* Times vary based on:</text>
+  <text x="60" y="585" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">- Query complexity</text>
+  <text x="60" y="600" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">- Context size</text>
+  <text x="60" y="615" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">- API response times</text>
+  <text x="60" y="630" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">- Network latency</text>
+</svg>
