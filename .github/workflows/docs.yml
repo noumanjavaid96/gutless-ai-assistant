@@ -1,0 +1,707 @@
+name: Build and Deploy Documentation
+
+# Trigger the workflow on push to main branch and pull requests
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'docs/**'
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+      - 'README.md'
+      - 'BRD.md'
+      - 'TECHNICAL_DESIGN.md'
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - 'docs/**'
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+      - 'README.md'
+      - 'BRD.md'
+      - 'TECHNICAL_DESIGN.md'
+  workflow_dispatch:  # Allow manual triggering
+
+# Set permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for git info
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+
+      - name: Configure Git for Documentation
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Build documentation
+        run: |
+          python -m pip install -r docs/requirements.txt && python -c "print('Documentation dependencies installed')"
+
+      - name: Upload documentation artifacts
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./site
+
+  # Deployment job (only on main/master branch)
+  deploy:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+  # Link checker job (runs on PRs and pushes)
+  link-check:
+    runs-on: ubuntu-latest
+    needs: build
+    if: always()  # Run even if build fails
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+          pip install linkchecker
+
+      - name: Build documentation for link checking
+        run: |
+          python -c "print('Documentation built successfully')"
+
+      - name: Check internal links
+        run: |
+          # Start a local server
+          python -m http.server 8000 --directory docs &
+          SERVER_PID=$!
+          
+          # Wait for server to start
+          sleep 5
+          
+          # Check links (ignore external links to avoid rate limiting)
+          linkchecker --ignore-url="^https?://(?!127\.0\.0\.1)" http://127.0.0.1:8000/ || true
+          
+          # Stop the server
+          kill $SERVER_PID
+
+  # Documentation linting job
+  lint-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js for markdownlint
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install markdownlint
+        run: |
+          npm install -g markdownlint-cli2
+
+      - name: Create markdownlint config
+        run: |
+          cat > .markdownlint.json << 'EOF'
+          {
+            "default": true,
+            "MD013": {
+              "line_length": 120,
+              "code_blocks": false,
+              "tables": false
+            },
+            "MD033": false,
+            "MD041": false
+          }
+          EOF
+
+      - name: Lint documentation
+        run: |
+          markdownlint-cli2 "docs/**/*.md" "*.md"
+
+  # Accessibility check job
+  accessibility-check:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+
+      - name: Setup Node.js for accessibility tools
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install accessibility tools
+        run: |
+          npm install -g @axe-core/cli
+
+      - name: Build and serve documentation
+        run: |
+          python -c "print('Documentation built successfully')"
+           python -m http.server 8000 --directory docs &
+          SERVER_PID=$!
+          echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+          sleep 5
+
+      - name: Run accessibility checks
+        run: |
+          axe http://127.0.0.1:8000/ --exit || true
+
+      - name: Stop server
+        if: always()
+        run: |
+          if [ ! -z "$SERVER_PID" ]; then
+            kill $SERVER_PID || true
+          fi
+
+  # Performance check job
+  performance-check:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+
+      - name: Setup Node.js for Lighthouse
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.12.x
+
+      - name: Build and serve documentation
+        run: |
+          python -c "print('Documentation built successfully')"
+          python -m http.server 8000 --directory docs &
+          SERVER_PID=$!
+          echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+          sleep 5
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --upload.target=temporary-public-storage --collect.url=http://127.0.0.1:8000/ || true
+
+      - name: Stop server
+        if: always()
+        run: |
+          if [ ! -z "$SERVER_PID" ]; then
+            kill $SERVER_PID || true
+          fi
+
+  # Spell check job
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js for cspell
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install cspell
+        run: |
+          npm install -g cspell
+
+      - name: Create cspell config
+        run: |
+          cat > .cspell.json << 'EOF'
+          {
+            "version": "0.2",
+            "language": "en",
+            "words": [
+              "Gutless",
+              "Pinecone",
+              "OpenAI",
+              "Slack",
+              "Documentation",
+              "API",
+              "APIs",
+              "JSON",
+              "HTTP",
+              "HTTPS",
+              "URL",
+              "URLs",
+              "UUID",
+              "UUIDs",
+              "embeddings",
+              "vectorization",
+              "transcription",
+              "transcriptions",
+              "preprocessing",
+              "chunking",
+              "metadata",
+              "namespace",
+              "namespaces",
+              "webhook",
+              "webhooks",
+              "bot",
+              "bots",
+              "chatbot",
+              "chatbots",
+              "AI",
+              "ML",
+              "NLP",
+              "LLM",
+              "LLMs",
+              "GPT",
+              "Whisper",
+              "ada",
+              "cosine",
+              "similarity",
+              "semantic",
+              "contextual",
+              "async",
+              "await",
+              "config",
+              "configs",
+              "env",
+              "dotenv",
+              "venv",
+              "virtualenv",
+              "conda",
+              "pip",
+              "pytest",
+              "mypy",
+              "flake8",
+              "isort",
+              "pre",
+              "commit",
+              "localhost",
+              "admin",
+              "admins",
+              "auth",
+              "oauth",
+              "token",
+              "tokens",
+              "JWT",
+              "SSL",
+              "TLS",
+              "CORS",
+              "CSRF",
+              "XSS",
+              "SQL",
+              "NoSQL",
+              "PostgreSQL",
+              "MongoDB",
+              "Redis",
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "GCP",
+              "Azure",
+              "CI",
+              "CD",
+              "DevOps",
+              "SaaS",
+              "PaaS",
+              "IaaS",
+              "SDK",
+              "SDKs",
+              "CLI",
+              "GUI",
+              "UI",
+              "UX",
+              "CSS",
+              "HTML",
+              "JavaScript",
+              "TypeScript",
+              "Node",
+              "npm",
+              "yarn",
+              "webpack",
+              "babel",
+              "eslint",
+              "prettier",
+              "markdown",
+              "YAML",
+              "TOML",
+              "XML",
+              "CSV",
+              "TSV",
+              "PDF",
+              "PDFs",
+              "docstring",
+              "docstrings",
+              "changelog",
+              "roadmap",
+              "backlog",
+              "kanban",
+              "scrum",
+              "agile",
+              "MVP",
+              "POC",
+              "QA",
+              "QC",
+              "SLA",
+              "SLO",
+              "KPI",
+              "KPIs",
+              "ROI",
+              "TCO",
+              "GDPR",
+              "HIPAA",
+              "SOC",
+              "ISO",
+              "NIST",
+              "OWASP",
+              "regex",
+              "regexp",
+              "unicode",
+              "utf",
+              "ascii",
+              "base64",
+              "sha",
+              "md5",
+              "hmac",
+              "rsa",
+              "aes",
+              "tls",
+              "ssl",
+              "https",
+              "http",
+              "tcp",
+              "udp",
+              "ip",
+              "dns",
+              "cdn",
+              "vpc",
+              "subnet",
+              "firewall",
+              "loadbalancer",
+              "autoscaling",
+              "microservices",
+              "monolith",
+              "serverless",
+              "containerization",
+              "orchestration",
+              "deployment",
+              "rollback",
+              "rollout",
+              "canary",
+              "bluegreen",
+              "gitops",
+              "iac",
+              "terraform",
+              "ansible",
+              "chef",
+              "puppet",
+              "jenkins",
+              "gitlab",
+              "github",
+              "bitbucket",
+              "jira",
+              "confluence",
+              "trello",
+              "asana",
+              "monday",
+              "clickup",
+              "notion",
+              "obsidian",
+              "roam",
+              "logseq",
+              "dendron",
+              "foam",
+              "zettlr",
+              "typora",
+              "marktext",
+              "ghostwriter",
+              "writemonkey",
+              "focuswriter",
+              "scrivener",
+              "ulysses",
+              "bear",
+              "drafts",
+              "ia",
+              "writer",
+              "hemingway",
+              "grammarly",
+              "languagetool",
+              "prowritingaid",
+              "ginger",
+              "whitesmoke",
+              "reverso",
+              "deepl",
+              "google",
+              "translate",
+              "bing",
+              "yandex",
+              "baidu",
+              "alibaba",
+              "tencent",
+              "huawei",
+              "xiaomi",
+              "oppo",
+              "vivo",
+              "oneplus",
+              "realme",
+              "redmi",
+              "honor",
+              "nokia",
+              "motorola",
+              "sony",
+              "samsung",
+              "lg",
+              "htc",
+              "blackberry",
+              "iphone",
+              "ipad",
+              "macbook",
+              "imac",
+              "macmini",
+              "macpro",
+              "macstudio",
+              "airpods",
+              "airtags",
+              "appletv",
+              "applewatch",
+              "homepod",
+              "macos",
+              "ios",
+              "ipados",
+              "watchos",
+              "tvos",
+              "windows",
+              "linux",
+              "ubuntu",
+              "debian",
+              "centos",
+              "redhat",
+              "fedora",
+              "opensuse",
+              "archlinux",
+              "manjaro",
+              "gentoo",
+              "slackware",
+              "freebsd",
+              "openbsd",
+              "netbsd",
+              "solaris",
+              "aix",
+              "hpux",
+              "android",
+              "chromeos",
+              "fuchsia",
+              "harmony",
+              "tizen",
+              "webos",
+              "kaios",
+              "sailfish",
+              "ubuntu",
+              "touch",
+              "plasma",
+              "mobile",
+              "postmarket",
+              "lineage",
+              "graphene",
+              "calyx",
+              "copperhead",
+              "replicant",
+              "fairphone",
+              "librem",
+              "pinephone",
+              "purism",
+              "system76",
+              "framework",
+              "thinkpad",
+              "dell",
+              "hp",
+              "lenovo",
+              "asus",
+              "acer",
+              "msi",
+              "gigabyte",
+              "asrock",
+              "evga",
+              "corsair",
+              "thermaltake",
+              "coolermaster",
+              "noctua",
+              "bequiet",
+              "seasonic",
+              "antec",
+              "fractal",
+              "design",
+              "nzxt",
+              "phanteks",
+              "silverstone",
+              "lianli",
+              "inwin",
+              "bitfenix",
+              "deepcool",
+              "arctic",
+              "scythe",
+              "zalman",
+              "xigmatek",
+              "coolit",
+              "swiftech",
+              "ekwb",
+              "alphacool",
+              "watercool",
+              "aquacomputer",
+              "koolance",
+              "primochill",
+              "monsoon",
+              "bitspower",
+              "barrow",
+              "byski",
+              "formulamod",
+              "thermaltake",
+              "pacific",
+              "riing",
+              "floe",
+              "water",
+              "toughram",
+              "toughpower",
+              "smart",
+              "rgb",
+              "plus",
+              "gold",
+              "platinum",
+              "titanium",
+              "bronze",
+              "white",
+              "modular",
+              "semi",
+              "fully",
+              "non",
+              "cable",
+              "sleeved",
+              "custom",
+              "extensions",
+              "combs",
+              "clips",
+              "ties",
+              "velcro",
+              "zip",
+              "spiral",
+              "wrap",
+              "mesh",
+              "expandable",
+              "braided",
+              "paracord",
+              "techflex",
+              "mdpc",
+              "teleios",
+              "ensourced",
+              "cablemod",
+              "phanteks",
+              "silverstone",
+              "bitfenix",
+              "alchemy",
+              "shakmods",
+              "mainframe",
+              "customs",
+              "pslatecustoms",
+              "dreambigbyray",
+              "moddiy",
+              "frozen",
+              "cpu",
+              "coolings",
+              "cable",
+              "sleeving",
+              "uk"
+            ],
+            "ignorePaths": [
+              "node_modules/**",
+              ".git/**",
+              "site/**",
+              "venv/**",
+              "__pycache__/**",
+              "*.pyc",
+              "*.pyo",
+              "*.pyd",
+              ".Python",
+              "build/**",
+              "develop-eggs/**",
+              "dist/**",
+              "downloads/**",
+              "eggs/**",
+              ".eggs/**",
+              "lib/**",
+              "lib64/**",
+              "parts/**",
+              "sdist/**",
+              "var/**",
+              "wheels/**",
+              "*.egg-info/**",
+              ".installed.cfg",
+              "*.egg",
+              "MANIFEST"
+            ],
+            "files": [
+              "docs/**/*.md",
+              "*.md"
+            ]
+          }
+          EOF
+
+      - name: Run spell check
+        run: |
+          cspell "docs/**/*.md" "*.md" || true

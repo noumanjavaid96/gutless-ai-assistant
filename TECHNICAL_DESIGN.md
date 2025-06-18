@@ -59,7 +59,7 @@ The primary goal is to create a Slack bot capable of answering questions related
     5.  **Answer Synthesis**: Pass the query and assembled context to GPT-4 to generate an answer.
     6.  **Information Linking**: Include references/links to the source material in the response.
 *   **Key Technologies/Services**:
-    *   LLM: GPT-4 API
+    *   LLM: GPT-4o API
     *   Prompt Engineering: Design effective prompts for answer synthesis.
 
 ### 3.5. Logging Module (Optional for MVP - Basic Recommended)

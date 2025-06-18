@@ -1,0 +1,112 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000020"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">Renesis AI Assistant - High-Level Architecture</text>
+  
+  <!-- Top Row: User Interface Layer -->
+  <rect x="50" y="70" width="120" height="80" rx="8" fill="url(#blueGradient)" filter="url(#shadow)"/>
+  <text x="110" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Slack Users</text>
+  <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Interface</text>
+  
+  <rect x="240" y="70" width="120" height="80" rx="8" fill="url(#blueGradient)" filter="url(#shadow)"/>
+  <text x="300" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Slack Platform</text>
+  <text x="300" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Events API</text>
+  
+  <rect x="430" y="70" width="120" height="80" rx="8" fill="url(#blueGradient)" filter="url(#shadow)"/>
+  <text x="490" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Slack Bot</text>
+  <text x="490" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Interface</text>
+  
+  <!-- Arrows between top row -->
+  <path d="M170 110 L240 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M240 110 L170 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)" transform="translate(0, -10)"/>
+  
+  <path d="M360 110 L430 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M430 110 L360 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)" transform="translate(0, -10)"/>
+  
+  <!-- Middle Row: Processing Layer -->
+  <rect x="50" y="220" width="120" height="80" rx="8" fill="url(#greenGradient)" filter="url(#shadow)"/>
+  <text x="110" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Content Sources</text>
+  <text x="110" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">(Videos, PDFs)</text>
+  <text x="110" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Ingestion</text>
+  
+  <rect x="240" y="220" width="120" height="80" rx="8" fill="url(#greenGradient)" filter="url(#shadow)"/>
+  <text x="300" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Content</text>
+  <text x="300" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Processing</text>
+  
+  <rect x="430" y="220" width="120" height="80" rx="8" fill="url(#greenGradient)" filter="url(#shadow)"/>
+  <text x="490" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Core Logic</text>
+  <text x="490" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Orchestrator</text>
+  
+  <!-- Arrows in middle row -->
+  <path d="M170 260 L240 260" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M360 260 L430 260" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Vertical arrow from bot to core logic -->
+  <path d="M490 150 L490 220" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Bottom Row: AI Services Layer -->
+  <rect x="50" y="370" width="120" height="80" rx="8" fill="url(#purpleGradient)" filter="url(#shadow)"/>
+  <text x="110" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">OpenAI API</text>
+  <text x="110" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">(GPT-4o)</text>
+  <text x="110" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">LLM Service</text>
+  
+  <rect x="240" y="370" width="120" height="80" rx="8" fill="url(#purpleGradient)" filter="url(#shadow)"/>
+  <text x="300" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Embedding</text>
+  <text x="300" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Service</text>
+  <text x="300" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Vector Generation</text>
+  
+  <rect x="430" y="370" width="120" height="80" rx="8" fill="url(#purpleGradient)" filter="url(#shadow)"/>
+  <text x="490" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Pinecone</text>
+  <text x="490" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Vector Database</text>
+  <text x="490" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Similarity Search</text>
+  
+  <!-- Arrows in bottom row -->
+  <path d="M170 410 L240 410" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M240 410 L170 410" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)" transform="translate(0, -10)"/>
+  
+  <path d="M360 410 L430 410" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M430 410 L360 410" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)" transform="translate(0, -10)"/>
+  
+  <!-- Vertical arrow from core logic to embedding service -->
+  <path d="M490 300 L490 370" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Data flow indicators -->
+  <rect x="620" y="100" width="150" height="350" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <text x="695" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Data Flow</text>
+  
+  <circle cx="640" cy="150" r="4" fill="#3b82f6"/>
+  <text x="650" y="155" font-family="Arial, sans-serif" font-size="10" fill="#374151">User Query</text>
+  
+  <circle cx="640" cy="180" r="4" fill="#10b981"/>
+  <text x="650" y="185" font-family="Arial, sans-serif" font-size="10" fill="#374151">Content Processing</text>
+  
+  <circle cx="640" cy="210" r="4" fill="#8b5cf6"/>
+  <text x="650" y="215" font-family="Arial, sans-serif" font-size="10" fill="#374151">AI Processing</text>
+  
+  <circle cx="640" cy="240" r="4" fill="#f59e0b"/>
+  <text x="650" y="245" font-family="Arial, sans-serif" font-size="10" fill="#374151">Response Generation</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>

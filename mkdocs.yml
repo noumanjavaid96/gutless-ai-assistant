@@ -1,0 +1,139 @@
+site_name: Renesis AI Assistant Documentation
+site_description: Comprehensive documentation for the Renesis AI Assistant - an intelligent AI-powered assistant for enhanced productivity
+site_author: Renesis Team
+site_url: https://noumanjavaid96.github.io/gutless-ai-assistant/
+
+# Repository
+repo_name: gutless-ai-assistant
+repo_url: https://github.com/noumanjavaid96/gutless-ai-assistant
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2025 Renesis Team
+
+# Configuration
+theme:
+  name: readthedocs
+  language: en
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - python
+    - javascript
+  navigation_depth: 4
+  collapse_navigation: false
+  sticky_navigation: true
+  include_homepage_in_sidebar: true
+  prev_next_buttons_location: bottom
+  style_external_links: true
+  favicon: https://raw.githubusercontent.com/noumanjavaid96/gutless-ai-assistant/refs/heads/main/renesis-logo-white.svg
+  logo: https://raw.githubusercontent.com/noumanjavaid96/gutless-ai-assistant/refs/heads/main/renesis-logo-white.svg
+  features:
+    - search
+    - navigation
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(\w+)'
+
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: ${GOOGLE_ANALYTICS_KEY}
+  social:
+    - name: Website
+      link: https://renesis.ai
+    - name: Slack
+      link: https://renesistech.slack.com
+  version:
+    provider: mike
+    default: latest
+  status:
+    new: Recently added
+    deprecated: Deprecated
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/modern-components.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: your-username
+      repo: gutless-ai-assistant
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/documentation.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: installation.md
+    - Configuration: configuration.md
+    - Usage: usage.md
+    - Deployment: deployment.md
+  - Documentation:
+    - Architecture: architecture.md
+    - API Reference: api-reference.md
+    - Troubleshooting: troubleshooting.md
+    - FAQ: faq.md
+  - Contributing:
+    - Contributing Guide: contributing.md
+
+# Validation
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+# Watch
+watch:
+  - docs/
+  - mkdocs.yml
+  - BRD.md
+  - TECHNICAL_DESIGN.md
