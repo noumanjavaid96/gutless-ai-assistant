@@ -10,7 +10,8 @@ Welcome to the Renesis AI Assistant documentation. This intelligent AI-powered a
     <a href="installation.md" class="button">Get Started</a>
   </div>
   
-  <div class="card feature-card animate-fade-in-up animate-delay-1">
+  <
+div class="card feature-card animate-fade-in-up animate-delay-1">
     <div class="card-icon">⚙️</div>
     <h3 class="card-title">Configuration</h3>
     <p>Customize your AI assistant with flexible configuration options.</p>
